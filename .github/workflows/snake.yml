@@ -1,0 +1,44 @@
+name: Generate contribution snake (SVG)
+
+# roda diariamente + manualmente + em push na branch main
+on:
+  schedule:
+    - cron: '0 0 * * *'     # 1x por dia (UTC)
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+# permite que o GITHUB_TOKEN escreva no repositório
+permissions:
+  contents: write
+
+jobs:
+  generate-snake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate SVGs (snk svg-only)
+        id: snk
+        uses: Platane/snk/svg-only@v3
+        with:
+          # usa o dono do repo por padrão; você pode substituir por um usuário específico
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/github-snake.svg
+            assets/github-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit generated SVGs
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'chore: update github-contribution-snake'
+          add: 'assets'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
