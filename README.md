@@ -40,3 +40,12 @@ Em processo de formação para desenvolver aplicações que unem **tecnologia mo
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white&style=for-the-badge)](#)
 [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=fff&style=for-the-badge)](#)
 [![Vercel](https://img.shields.io/badge/Vercel-%23000000.svg?logo=vercel&logoColor=white&style=for-the-badge)](#)
+
+#
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=thales0vinicius&rank_icon=github&show_icons=true&theme=default&hide_title=true&hide_rank=false&card_width=400" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=thales0vinicius&layout=compact&theme=default&card_width=400" />
+</div>
+
+#
